@@ -1,0 +1,228 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 514
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE RUHANDE;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE RUHANDE;
+Database changed
+mysql> CREATE TABLE NGOMA(ID INT(5),FIRST_NAME CHAR(15),LAST_NAME CHAR(10),GENDER CHAR(8),PROVINCE CHAR(10),DISTRICT CHAR(14), SECTOR CHAR(13),CELL CHAR(13),EMAIL_ADDRESS VARCHAR(25),TEL_NO VARCHAR(10));
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+mysql> INSERT NGOMA VALUES('1','NIYORUREMA','PATRICK','M','EAST','NYAGATARE','RUKOMO','GATUNDA','niyoruremapatrick01@gmail.com','0780000000');
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+mysql> INSERT NGOMA VALUES('2','HABIMANA','DANIEL','M','KIGALI CITY','KICUKIRO','GIKONDO','KAGUNGA','danielhabimana03@hotmail.com','0785000000');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> INSERT NGOMA VALUES('2','RUDASINGWA','ALLAN','M','KIGALI CITY','KICUKIRO','GIKONDO','KAGUNGA','allanrudasingwa03@hotmail.com','0782000000');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> INSERT NGOMA VALUES('4','HABIMANA','DANIEL','M','KIGALI CITY','KICUKIRO','GIKONDO','KAGUNGA','danielhabimana03@hotmail.com','0785000000');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> INSERT NGOMA VALUES('5','LOUIS','PRINCE','M','KIGALI CITY','KICUKIRO','KICUKIRO','MUYANGE','louisprince3@hotmail.com','0789000000');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT NGOMA VALUES('6','UWASE','MONIQUE','F','EAST','NYAGATARE','KARANGAZI','MUNINI','moniqueuwase@hotmail.com','0784500000');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT *FROM NGOMA;
++------+------------+-----------+--------+------------+-----------+-----------+---------+---------------------------+------------+
+| ID   | FIRST_NAME | LAST_NAME | GENDER | PROVINCE   | DISTRICT  | SECTOR    | CELL    | EMAIL_ADDRESS             | TEL_NO     |
++------+------------+-----------+--------+------------+-----------+-----------+---------+---------------------------+------------+
+|    1 | NIYORUREMA | PATRICK   | M      | EAST       | NYAGATARE | RUKOMO    | GATUNDA | niyoruremapatrick01@gmail | 0780000000 |
+|    2 | HABIMANA   | DANIEL    | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA | danielhabimana03@hotmail. | 0785000000 |
+|    2 | RUDASINGWA | ALLAN     | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA | allanrudasingwa03@hotmail | 0782000000 |
+|    4 | HABIMANA   | DANIEL    | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA | danielhabimana03@hotmail. | 0785000000 |
+|    5 | LOUIS      | PRINCE    | M      | KIGALI CIT | KICUKIRO  | KICUKIRO  | MUYANGE | louisprince3@hotmail.com  | 0789000000 |
+|    6 | UWASE      | MONIQUE   | F      | EAST       | NYAGATARE | KARANGAZI | MUNINI  | moniqueuwase@hotmail.com  | 0784500000 |
++------+------------+-----------+--------+------------+-----------+-----------+---------+---------------------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET ID='3' WHERE FIRST_NAME='RUDASINGWA';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET FIRST_NAME='BISENGO'WHERE ID='4';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET EMAIL_ADDRESS='bisengodaniel@gmail.com' where ID='4';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET TEL_NO='0786000000' WHERE ID='4';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++------+------------+-----------+--------+------------+-----------+-----------+---------+---------------------------+------------+
+| ID   | FIRST_NAME | LAST_NAME | GENDER | PROVINCE   | DISTRICT  | SECTOR    | CELL    | EMAIL_ADDRESS             | TEL_NO     |
++------+------------+-----------+--------+------------+-----------+-----------+---------+---------------------------+------------+
+|    1 | NIYORUREMA | PATRICK   | M      | EAST       | NYAGATARE | RUKOMO    | GATUNDA | niyoruremapatrick01@gmail | 0780000000 |
+|    2 | HABIMANA   | DANIEL    | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA | danielhabimana03@hotmail. | 0785000000 |
+|    3 | RUDASINGWA | ALLAN     | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA | allanrudasingwa03@hotmail | 0782000000 |
+|    4 | BISENGO    | DANIEL    | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA | bisengodaniel@gmail.com   | 0786000000 |
+|    5 | LOUIS      | PRINCE    | M      | KIGALI CIT | KICUKIRO  | KICUKIRO  | MUYANGE | louisprince3@hotmail.com  | 0789000000 |
+|    6 | UWASE      | MONIQUE   | F      | EAST       | NYAGATARE | KARANGAZI | MUNINI  | moniqueuwase@hotmail.com  | 0784500000 |
++------+------------+-----------+--------+------------+-----------+-----------+---------+---------------------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> INSERT NGOMA VALUES ('7','RUKUNDO','ERIC','M','WEST','RUSIZI','NKANKA','GASHORA','rukundoeric100@gmail.com','0788888888');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT NGOMA VALUES ('8','VANESSA','NOELLA','F','NORTH','GICUMBI','BYUMBA','KIGABIRO','vanessanoella600@gmail.com','0788888442');
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+mysql> INSERT NGOMA VALUES ('9','MUTESI','DIVINAH','F','KIGALI CITY','KICUKIRO','KICUKIRO','KAGUNGA','divinahmutesi@gmail.com','0785888442');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT NGOMA VALUES ('10','MAHIRE','DIANE','F','KIGALI CITY','GASABO','KACYIRU','KACYIRU','dianemahiregabriella@gmail.com','0785845442');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> SELECT *FROM NGOMA;
++------+------------+-----------+--------+------------+-----------+-----------+----------+---------------------------+------------+
+| ID   | FIRST_NAME | LAST_NAME | GENDER | PROVINCE   | DISTRICT  | SECTOR    | CELL     | EMAIL_ADDRESS             | TEL_NO     |
++------+------------+-----------+--------+------------+-----------+-----------+----------+---------------------------+------------+
+|    1 | NIYORUREMA | PATRICK   | M      | EAST       | NYAGATARE | RUKOMO    | GATUNDA  | niyoruremapatrick01@gmail | 0780000000 |
+|    2 | HABIMANA   | DANIEL    | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA  | danielhabimana03@hotmail. | 0785000000 |
+|    3 | RUDASINGWA | ALLAN     | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA  | allanrudasingwa03@hotmail | 0782000000 |
+|    4 | BISENGO    | DANIEL    | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA  | bisengodaniel@gmail.com   | 0786000000 |
+|    5 | LOUIS      | PRINCE    | M      | KIGALI CIT | KICUKIRO  | KICUKIRO  | MUYANGE  | louisprince3@hotmail.com  | 0789000000 |
+|    6 | UWASE      | MONIQUE   | F      | EAST       | NYAGATARE | KARANGAZI | MUNINI   | moniqueuwase@hotmail.com  | 0784500000 |
+|    7 | RUKUNDO    | ERIC      | M      | WEST       | RUSIZI    | NKANKA    | GASHORA  | rukundoeric100@gmail.com  | 0788888888 |
+|    8 | VANESSA    | NOELLA    | F      | NORTH      | GICUMBI   | BYUMBA    | KIGABIRO | vanessanoella600@gmail.co | 0788888442 |
+|    9 | MUTESI     | DIVINAH   | F      | KIGALI CIT | KICUKIRO  | KICUKIRO  | KAGUNGA  | divinahmutesi@gmail.com   | 0785888442 |
+|   10 | MAHIRE     | DIANE     | F      | KIGALI CIT | GASABO    | KACYIRU   | KACYIRU  | dianemahiregabriella@gmai | 0785845442 |
++------+------------+-----------+--------+------------+-----------+-----------+----------+---------------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD STATUS CHAR(10);
+Query OK, 10 rows affected (0.10 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++------+------------+-----------+--------+------------+-----------+-----------+----------+---------------------------+------------+--------+
+| ID   | FIRST_NAME | LAST_NAME | GENDER | PROVINCE   | DISTRICT  | SECTOR    | CELL     | EMAIL_ADDRESS             | TEL_NO     | STATUS |
++------+------------+-----------+--------+------------+-----------+-----------+----------+---------------------------+------------+--------+
+|    1 | NIYORUREMA | PATRICK   | M      | EAST       | NYAGATARE | RUKOMO    | GATUNDA  | niyoruremapatrick01@gmail | 0780000000 | NULL   |
+|    2 | HABIMANA   | DANIEL    | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA  | danielhabimana03@hotmail. | 0785000000 | NULL   |
+|    3 | RUDASINGWA | ALLAN     | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA  | allanrudasingwa03@hotmail | 0782000000 | NULL   |
+|    4 | BISENGO    | DANIEL    | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA  | bisengodaniel@gmail.com   | 0786000000 | NULL   |
+|    5 | LOUIS      | PRINCE    | M      | KIGALI CIT | KICUKIRO  | KICUKIRO  | MUYANGE  | louisprince3@hotmail.com  | 0789000000 | NULL   |
+|    6 | UWASE      | MONIQUE   | F      | EAST       | NYAGATARE | KARANGAZI | MUNINI   | moniqueuwase@hotmail.com  | 0784500000 | NULL   |
+|    7 | RUKUNDO    | ERIC      | M      | WEST       | RUSIZI    | NKANKA    | GASHORA  | rukundoeric100@gmail.com  | 0788888888 | NULL   |
+|    8 | VANESSA    | NOELLA    | F      | NORTH      | GICUMBI   | BYUMBA    | KIGABIRO | vanessanoella600@gmail.co | 0788888442 | NULL   |
+|    9 | MUTESI     | DIVINAH   | F      | KIGALI CIT | KICUKIRO  | KICUKIRO  | KAGUNGA  | divinahmutesi@gmail.com   | 0785888442 | NULL   |
+|   10 | MAHIRE     | DIANE     | F      | KIGALI CIT | GASABO    | KACYIRU   | KACYIRU  | dianemahiregabriella@gmai | 0785845442 | NULL   |
++------+------------+-----------+--------+------------+-----------+-----------+----------+---------------------------+------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET STATUS='SINGLE' WHERE ID='1';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='MARRIED' WHERE ID='2';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='MARRIED' WHERE ID='3';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='SINGLE' WHERE ID='4';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='MARRIED' WHERE ID='5';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='SINGLE' WHERE ID='6';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='MARRIED' WHERE ID='7';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='SINGLE' WHERE ID='8';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='MARRIED' WHERE ID='9';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET STATUS='SINGLE' WHERE ID='10';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++------+------------+-----------+--------+------------+-----------+-----------+----------+---------------------------+------------+---------+
+| ID   | FIRST_NAME | LAST_NAME | GENDER | PROVINCE   | DISTRICT  | SECTOR    | CELL     | EMAIL_ADDRESS             | TEL_NO     | STATUS  |
++------+------------+-----------+--------+------------+-----------+-----------+----------+---------------------------+------------+---------+
+|    1 | NIYORUREMA | PATRICK   | M      | EAST       | NYAGATARE | RUKOMO    | GATUNDA  | niyoruremapatrick01@gmail | 0780000000 | SINGLE  |
+|    2 | HABIMANA   | DANIEL    | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA  | danielhabimana03@hotmail. | 0785000000 | MARRIED |
+|    3 | RUDASINGWA | ALLAN     | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA  | allanrudasingwa03@hotmail | 0782000000 | MARRIED |
+|    4 | BISENGO    | DANIEL    | M      | KIGALI CIT | KICUKIRO  | GIKONDO   | KAGUNGA  | bisengodaniel@gmail.com   | 0786000000 | SINGLE  |
+|    5 | LOUIS      | PRINCE    | M      | KIGALI CIT | KICUKIRO  | KICUKIRO  | MUYANGE  | louisprince3@hotmail.com  | 0789000000 | MARRIED |
+|    6 | UWASE      | MONIQUE   | F      | EAST       | NYAGATARE | KARANGAZI | MUNINI   | moniqueuwase@hotmail.com  | 0784500000 | SINGLE  |
+|    7 | RUKUNDO    | ERIC      | M      | WEST       | RUSIZI    | NKANKA    | GASHORA  | rukundoeric100@gmail.com  | 0788888888 | MARRIED |
+|    8 | VANESSA    | NOELLA    | F      | NORTH      | GICUMBI   | BYUMBA    | KIGABIRO | vanessanoella600@gmail.co | 0788888442 | SINGLE  |
+|    9 | MUTESI     | DIVINAH   | F      | KIGALI CIT | KICUKIRO  | KICUKIRO  | KAGUNGA  | divinahmutesi@gmail.com   | 0785888442 | MARRIED |
+|   10 | MAHIRE     | DIANE     | F      | KIGALI CIT | GASABO    | KACYIRU   | KACYIRU  | dianemahiregabriella@gmai | 0785845442 | SINGLE  |
++------+------------+-----------+--------+------------+-----------+-----------+----------+---------------------------+------------+---------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA DROP SECTOR;
+Query OK, 10 rows affected (0.09 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> SELECT *FROM NGOMA;
++------+------------+-----------+--------+------------+-----------+----------+---------------------------+------------+---------+
+| ID   | FIRST_NAME | LAST_NAME | GENDER | PROVINCE   | DISTRICT  | CELL     | EMAIL_ADDRESS             | TEL_NO     | STATUS  |
++------+------------+-----------+--------+------------+-----------+----------+---------------------------+------------+---------+
+|    1 | NIYORUREMA | PATRICK   | M      | EAST       | NYAGATARE | GATUNDA  | niyoruremapatrick01@gmail | 0780000000 | SINGLE  |
+|    2 | HABIMANA   | DANIEL    | M      | KIGALI CIT | KICUKIRO  | KAGUNGA  | danielhabimana03@hotmail. | 0785000000 | MARRIED |
+|    3 | RUDASINGWA | ALLAN     | M      | KIGALI CIT | KICUKIRO  | KAGUNGA  | allanrudasingwa03@hotmail | 0782000000 | MARRIED |
+|    4 | BISENGO    | DANIEL    | M      | KIGALI CIT | KICUKIRO  | KAGUNGA  | bisengodaniel@gmail.com   | 0786000000 | SINGLE  |
+|    5 | LOUIS      | PRINCE    | M      | KIGALI CIT | KICUKIRO  | MUYANGE  | louisprince3@hotmail.com  | 0789000000 | MARRIED |
+|    6 | UWASE      | MONIQUE   | F      | EAST       | NYAGATARE | MUNINI   | moniqueuwase@hotmail.com  | 0784500000 | SINGLE  |
+|    7 | RUKUNDO    | ERIC      | M      | WEST       | RUSIZI    | GASHORA  | rukundoeric100@gmail.com  | 0788888888 | MARRIED |
+|    8 | VANESSA    | NOELLA    | F      | NORTH      | GICUMBI   | KIGABIRO | vanessanoella600@gmail.co | 0788888442 | SINGLE  |
+|    9 | MUTESI     | DIVINAH   | F      | KIGALI CIT | KICUKIRO  | KAGUNGA  | divinahmutesi@gmail.com   | 0785888442 | MARRIED |
+|   10 | MAHIRE     | DIANE     | F      | KIGALI CIT | GASABO    | KACYIRU  | dianemahiregabriella@gmai | 0785845442 | SINGLE  |
++------+------------+-----------+--------+------------+-----------+----------+---------------------------+------------+---------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT *FROM NGOMA WHERE PROVINCE='KIGALI CITY' AND STATUS='MARRIED';
+Empty set (0.00 sec)
+
+mysql> SELECT *FROM NGOMA WHERE PROVINCE='KIGALI CITY' AND GENDER='F';
+Empty set (0.00 sec)
+
+mysql> SELECT *FROM NGOMA WHERE PROVINCE='KIGALI CITY' OR GENDER='F';
++------+------------+-----------+--------+------------+-----------+----------+---------------------------+------------+---------+
+| ID   | FIRST_NAME | LAST_NAME | GENDER | PROVINCE   | DISTRICT  | CELL     | EMAIL_ADDRESS             | TEL_NO     | STATUS  |
++------+------------+-----------+--------+------------+-----------+----------+---------------------------+------------+---------+
+|    6 | UWASE      | MONIQUE   | F      | EAST       | NYAGATARE | MUNINI   | moniqueuwase@hotmail.com  | 0784500000 | SINGLE  |
+|    8 | VANESSA    | NOELLA    | F      | NORTH      | GICUMBI   | KIGABIRO | vanessanoella600@gmail.co | 0788888442 | SINGLE  |
+|    9 | MUTESI     | DIVINAH   | F      | KIGALI CIT | KICUKIRO  | KAGUNGA  | divinahmutesi@gmail.com   | 0785888442 | MARRIED |
+|   10 | MAHIRE     | DIANE     | F      | KIGALI CIT | GASABO    | KACYIRU  | dianemahiregabriella@gmai | 0785845442 | SINGLE  |
++------+------------+-----------+--------+------------+-----------+----------+---------------------------+------------+---------+
+4 rows in set (0.00 sec)
+
+mysql>
